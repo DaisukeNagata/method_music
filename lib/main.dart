@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final MethodChannel _channel =
       const MethodChannel('com.example.flutter_sound_audio/music');
 
-  Future<void> _incrementCounter() async {
+  void _incrementCounter() {
     getApplicationAssets('asibue.mp3')
         .then((value) => {_channel.invokeMethod(value)});
   }
@@ -68,8 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: const Center(
         child: Text(
-              'You have pushed the button this many times:',
-            ),
+          'You have pushed the button this many times:',
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
